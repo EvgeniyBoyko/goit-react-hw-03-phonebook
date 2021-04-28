@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
 
+import Section from '../Section';
+import ContactForm from '../ContactForm';
+import ContactList from '../ContactList';
+import Filter from '../Filter';
+
 import { initialState } from "./initialState";
-import Section from '../Section/index';
-import ContactForm from '../ContactForm/index';
-import ContactList from '../ContactList/index';
-import Filter from '../Filter/index';
 
 class PhoneBook extends Component {
 
@@ -24,6 +25,9 @@ class PhoneBook extends Component {
         );
         if (result) {
             alert(`${name} is already in contacts`);
+            return {
+                contacts
+            }
         } else {
             const newContacts = [...contacts];
             newContacts.push(newContact);
