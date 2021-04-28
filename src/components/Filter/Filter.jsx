@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Filter = ({ filter, changeFilter }) => {
   return (
@@ -12,5 +13,14 @@ const Filter = ({ filter, changeFilter }) => {
     </>
   );
 };
+
+Filter.defaultProps = {
+  changeFilter: () => {}
+}
+
+Filter.propTypes = {
+  filter: PropTypes.func,
+  changeFilter: PropTypes.func
+}
 
 export default Filter;

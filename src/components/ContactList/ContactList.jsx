@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ContactList = ({ contacts, filter, onDelete }) => {
   const filterContacts = contacts.filter(contact =>
@@ -13,6 +14,18 @@ const ContactList = ({ contacts, filter, onDelete }) => {
 
   return <ul>{contactElement}</ul>;
 };
+
+ContactList.defaultProps = {
+  onDelete: () => {},
+  contacts: [],
+  filter: () => {}
+}
+
+ContactList.propTypes = {
+  contacts: PropTypes.array,
+  filter: PropTypes.string,
+  onDelete: PropTypes.func,
+}
 
 export default ContactList;
  

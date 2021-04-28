@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {initialState} from '../PhoneBook/initialState';
-import {fields} from './fields';
+import { fields } from './fields';
 
 class ContactForm extends Component {
     state = { ...initialState };
